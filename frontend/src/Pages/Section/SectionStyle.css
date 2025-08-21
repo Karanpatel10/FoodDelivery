@@ -1,0 +1,189 @@
+/* SectionTop  */
+.SectionFull_mainarea{
+    background: url('../../assets/image/assets/hero/hero-1.jpg')no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+.SectionFull_mainarea .d_burger{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.SectionFull_mainarea .hi_light_price{
+    z-index: -1000;
+}
+.SectionFull_mainarea .hi_light_img{
+    height: 15rem;
+}
+.SectionFull_mainarea .hi_light_value{
+    position: relative;
+    top:4rem;
+    left: -12rem;
+}
+/* Section Subsection */
+.about_info_section{
+    background:url('../../assets/image/assets/about/about-1.jpg') no-repeat center center;
+    background-size: cover;
+    height: 750px;
+    width: 100%;
+}
+.about_wrapper{
+    background-color: var(--yellow);
+}
+.about_icon{
+    width: 13rem;
+}
+
+
+
+/* Section 1.0 */
+.section1_mainarea{
+    background: url('../../assets/image//frontend_assets/header_img.png') no-repeat center center;
+    background-size:cover; 
+    border-radius: 5rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: flex-end;
+}
+.section1_mainarea .subsection{
+    animation: fadeIn 1s ease-in-out;
+    border-radius: 4rem;
+}
+
+/* Effect front reload */
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* Section 2.0 Explore menu */
+.section2_mainarea
+{
+    background-color:var(--light-pink);
+}
+.explore_menu{
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    margin: 2rem 4rem;
+}
+.explore_menu .exp_image{
+cursor: pointer;
+}
+.explore_menu .exp_image:hover{
+    border: 4px solid var(--orange);
+    border-radius: 50%;
+}
+
+/* Section 3.0 Crazy Item */
+.ads_Box{
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+}
+.adv_1{
+    background: url('../../assets//image/assets/menu/ads-1.jpg') no-repeat center center;
+    background-size:cover;
+}
+.adv_2{
+    background: url('../../assets//image/assets/menu/ads-2.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Section 4.0 Customer Review */
+.section4_mainarea{
+    background: url('../../assets/image/assets/blog/reviews.jpg');
+}
+
+
+/* Section 5.0 Delivery Section*/
+.section5_mainarea{
+    background:url('../../assets/image/assets/footerabove/banner-1.jpg') no-repeat center center;
+    background-size: cover;
+    }
+
+
+/* Section 6.0 App Download */
+.appDload_mainarea{
+    background-color: var(--yellow);
+}
+.appDload_mainarea .app_logo{
+    /* width: 15rem; */
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1);
+}
+.appDload_mainarea .app_logo:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.appDload_mainarea .app_logo2{
+    height: auto;
+    max-width: 25rem;
+}
+.appDload_font{
+    font-size: 4rem;
+}
+
+/* Section 11.0 Paradox effect */
+.bg_parallax_scroll{
+    background: url('../../assets/image/assets/parallax/bg.jpg')no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 700px;
+}
+
+
+
+
+
+
+
+
+/* Media query */
+/* Mobile area size */
+
+@media (max-width: 996px) {
+/* sectionfull first mainarea */
+
+.SectionFull_mainarea .hi_light_img{
+    height: 9rem;
+}
+.SectionFull_mainarea .hi_light_value{
+    left: -8rem;
+    top:2rem;
+}
+
+  /* section 6.0 App Download */
+  .appDload_font{
+    font-size: 2rem;
+  }
+  .appDload_mainarea .app_logo{
+    width: 9rem;
+  }
+
+  /* section 7.0 parallax effect */
+  .bg_parallax_scroll{
+    background-attachment:scroll;
+    background-position: center;
+  }
+
+  .about_icon{
+    width: 8rem;
+}
+}
+
+@media (max-width:767px) {
+   .SectionFull_mainarea{
+    padding-top: 5rem;
+} 
+}

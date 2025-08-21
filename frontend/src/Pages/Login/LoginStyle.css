@@ -1,0 +1,40 @@
+.Login_fullarea{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 8, 8, 0.6);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.Login_mainarea{
+    /* place-self: center; */
+    background-color: var(--white);
+    max-width: 500px;
+    /* width: 30%; */
+    z-index: 1000;
+    padding: 2rem;
+}
+.Login_mainarea div{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.Login_popup_container div input{
+    padding: 1rem;
+}
+.Login_popup_container div span{
+    color: var(--orange);
+}
+
+/* Mobile View */
+
+@media screen and (max-width:992px) {
+    .Login_mainarea{
+        max-width: 90%;
+    }
+}
