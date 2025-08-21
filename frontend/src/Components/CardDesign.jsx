@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import './cardDStyle.css'
+import './CardDStyle.css'
 import { StoreContext } from '../Pages/Context/StoreContext';
 
 const starRating=(rating)=>{
