@@ -24,7 +24,7 @@ const StoreContextProvider = (props) => {
                 setCartItem((prev)=>({...prev,[itemId]:prev[itemId]+1}))
             }
             if(token){
-              await axios.post(url+"api/cart/add",{itemId},{headers:{token}})
+              await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
             }
             
         }
@@ -34,7 +34,7 @@ const StoreContextProvider = (props) => {
             setCartItem((prev)=>({...prev,[itemId]:prev[itemId]-1}))
             if(token)
             {
-              await axios.post(url+"api/cart/remove",{itemId},{headers:{token}})
+              await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
             }
         }
 
@@ -55,7 +55,7 @@ const StoreContextProvider = (props) => {
 // get list of combined from both server and local storage
     const fetchFoodList=async()=>{
         try{
-              const response=await axios.get(url+'api/food/list');
+              const response=await axios.get(url+'/api/food/list');
               const backendList=response.data.data;
               const combinedList=[...staticFoodList,...backendList];
               setFoodList(combinedList);
@@ -68,7 +68,7 @@ const StoreContextProvider = (props) => {
 
 // load data from backend display on frontend cart
     const loadCartData=async(token)=>{
-      const response=await axios.post(url+"api/cart/get",{},{headers:{token}})
+      const response=await axios.post(url+"/api/cart/get",{},{headers:{token}})
       setCartItem(response.data.cartData);
     }
 
