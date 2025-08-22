@@ -106,7 +106,7 @@ const Contact_us = () => {
                 <h1 className='py-3'>{data.icon}</h1>
                 <h2>{data.name}</h2>
                 <p>{data.description}</p>
-                <button className='btn order_btn btn_red'>{data.btn_icon}</button>
+                <Button className='btn order_btn btn_red'>{data.btn_icon}</Button>
               </Col>
             )
           })}

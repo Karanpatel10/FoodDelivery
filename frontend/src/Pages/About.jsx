@@ -116,7 +116,7 @@ const About = () => {
                     <h2>{data2.title}</h2>
                     <p>{data2.pagaraphs}</p>
                     <div className="d-flex justify-content-end">
-                    <NavLink to="/" className=' order_now btn_red  rounded d-inline-block p-3 fw-bold '>{data2.text}</NavLink>
+                    <NavLink to="/" className=' order_now btn_red  rounded p-3 fw-bold '><Button>{data2.text}</Button></NavLink>
                     </div>
                   </div>
                 
