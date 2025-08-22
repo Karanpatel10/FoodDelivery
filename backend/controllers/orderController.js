@@ -24,7 +24,7 @@ const countorder=async(req,res)=>{
 
 const placeOrder=async(req,res)=>{
 
-    const frontend_url="http://localhost:5173"
+    const frontend_url=process.env.VITE_API_URL||process.env.FRONTEND_URL|| "http://localhost:5173";;
 
     try{
 
