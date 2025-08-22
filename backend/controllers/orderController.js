@@ -76,7 +76,7 @@ const placeOrder=async(req,res)=>{
 }
 
 const verifyOrder=async(req,res)=>{
-    const {orderId,success}=req.body
+    const {orderId,success}=req.query
     try{
         if(success?.toLowerCase() === "true")
         {
@@ -91,7 +91,7 @@ const verifyOrder=async(req,res)=>{
                 const htmlContent=orderConfirmationEmail(order)
                 await sendEmail(user.email, "Your Order Confirmation", htmlContent);
             }
-            res.json({success:true,message:"Pad"});
+            res.json({success:true,message:"Paid"});
         }
         else{
             await orderModel.findByIdAndDelete(orderId);
