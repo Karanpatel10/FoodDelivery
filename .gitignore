@@ -1,4 +1,5 @@
 # Ignore backend secrets
+frontend/.env
 backend/.env
 
 # Ignore node_modules folders
