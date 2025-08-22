@@ -26,7 +26,7 @@ const Login = ({setShowLogin}) =>{
   const onLogin=async(event)=>{
     event.preventDefault()
     let newUrl=url;
-    newUrl += currstate === 'Login' ? '/api/user/login' : '/api/user/register';
+    newUrl += currstate === 'Login' ? 'api/user/login' : 'api/user/register';
    
     
    try{
