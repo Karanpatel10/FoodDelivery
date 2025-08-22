@@ -76,7 +76,7 @@ const placeOrder=async(req,res)=>{
 }
 
 const verifyOrder=async(req,res)=>{
-    const {orderId,success}=req.query
+    const {orderId,success}=req.body;
     try{
         if(success?.toLowerCase() === "true")
         {
