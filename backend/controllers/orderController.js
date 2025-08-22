@@ -1,5 +1,5 @@
 import orderModel from "../models/OrderModels.js";
-import userModel from "../models/UserModels.js";
+import userModel from "../models/userModels.js";
 import Stripe from "stripe"
 import sendEmail from "../utils/sendEmail.js";
 import { orderConfirmationEmail } from "../utils/emailTemplate.js";
