@@ -24,7 +24,7 @@ const starRating=(rating)=>{
 
 const CardDesgin = ({item,showReview=true,showPrice=true}) => {
   const{url,cartItem,addtoCart,removetoCart}=useContext(StoreContext);
-  const imageSrc = item.image.startsWith("/src") ? item.image : `${url}/image/${item.image}`; 
+  const imageSrc = item?.image?.startsWith("/") ? item.image : `${url}/image/${item.image}`; 
 
   
   

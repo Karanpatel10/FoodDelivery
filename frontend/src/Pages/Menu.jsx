@@ -30,7 +30,7 @@ const Menu = () => {
                     </Col>
                   ))
                   ):(
-                    <p>No Item found for category</p>
+                    <h2 className='py-5 d-flex justify-content-center'>No Item found for category</h2>
                   )
                }
             </Row>
