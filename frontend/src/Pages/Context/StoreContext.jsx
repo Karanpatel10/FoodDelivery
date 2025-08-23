@@ -56,7 +56,11 @@ const StoreContextProvider = (props) => {
     const fetchFoodList=async()=>{
         try{
               const response=await axios.get(url+'/api/food/list');
-              const backendList=response.data.data;
+               const backendList = response.data.data.map(item => ({
+      ...item,
+      _id: item._id || Math.random().toString(36).substr(2, 9), // fallback id
+      image: item.image || 'default_food.png', // fallback image
+    }));
               const combinedList=[...staticFoodList,...backendList];
               setFoodList(combinedList);
 

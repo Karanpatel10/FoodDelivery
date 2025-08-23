@@ -25,18 +25,20 @@ const starRating=(rating)=>{
 const CardDesgin = ({item,showReview=true,showPrice=true}) => {
   const{url,cartItem,addtoCart,removetoCart,food_list}=useContext(StoreContext);
   
-
   // Find item info safely
-  const iteminfo = food_list.find(product => product._id === item._id);
+  const iteminfo = food_list.find((product) => product._id === item._id);
 
   if (!iteminfo) {
-    // Data not ready yet, show loader or nothing
-    return null; // or a skeleton/loading placeholder
+    return null; // data not ready yet
   }
 
-  const imageSrc = iteminfo.image.startsWith("/src")
+  // Determine image source
+  const imageSrc = iteminfo.image.startsWith("http") // backend image has full URL
     ? iteminfo.image
-    : `${url}/images/${iteminfo.image}`;
+    : iteminfo.image.startsWith("/src") // static imported image
+    ? iteminfo.image
+    : `${url}/images/${iteminfo.image}`; // backend relative path
+  
   
   return (
     <>    
