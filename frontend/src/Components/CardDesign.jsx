@@ -25,8 +25,13 @@ const starRating=(rating)=>{
 const CardDesgin = ({item,showReview=true,showPrice=true}) => {
   const{url,cartItem,addtoCart,removetoCart}=useContext(StoreContext);
   let imageSrc="/default_food.png";
-  if(item?.image){
-  imageSrc=item?.image?.startsWith("/src")?item.image:`${url}/image/${item.image}`;
+  if (item?.image) {
+    if (item.image.startsWith('http') || item.image.startsWith('https')) {
+      imageSrc = item.image; // full backend URL
+    } else {
+      // reference static images via import if they are local
+      imageSrc = `${url}/image/${item.image}`; // backend images
+    }
   }
   
   return (
