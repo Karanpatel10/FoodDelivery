@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, NavLink } from 'react-bootstrap'
+import { Container, Row, Col, NavLink,Button} from 'react-bootstrap'
 import about1_image from '../assets/image/assets/about/about_img1.avif'
 import image1 from '../assets/image/assets/about/community.jpg'
 import image2 from '../assets/image/assets/about/storepic.jpg'
