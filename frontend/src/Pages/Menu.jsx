@@ -20,6 +20,7 @@ const Menu = () => {
 let menuItems = category 
     ? food_list.filter(item => item.category === category) 
     : food_list;
+  console.log(food_list);
   
   return (
     <>
