@@ -33,11 +33,16 @@ const CardDesgin = ({item,showReview=true,showPrice=true}) => {
   }
 
   // Determine image source
-  const imageSrc = iteminfo.image.startsWith("http") // backend image has full URL
-    ? iteminfo.image
-    : iteminfo.image.startsWith("/src") // static imported image
-    ? iteminfo.image
-    : `${url}/images/${iteminfo.image}`; // backend relative path
+  const imageSrc = (() => {
+  if (!iteminfo.image) return 'default_food.png'; // fallback
+  if (typeof iteminfo.image === 'string') {
+    if (iteminfo.image.startsWith('/src')) return iteminfo.image; // static
+    if (iteminfo.image.startsWith('http')) return iteminfo.image; // full URL
+    return `${url}/images/${iteminfo.image}`; // backend filename
+  }
+  return iteminfo.image; // imported static module
+})();
+
   
   
   return (
