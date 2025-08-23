@@ -24,11 +24,7 @@ const starRating=(rating)=>{
 
 const CardDesgin = ({item,showReview=true,showPrice=true}) => {
   const{url}=useContext(StoreContext);
-  const imageSrc = item.image.startsWith("/src") 
-    ? item.image // frontend static image
-    : item.image.startsWith("http") 
-        ? item.image // full backend URL already
-        : `${url}/images/${item.image}`; // backend relative path
+  const imageSrc = item.image.startsWith("/src") ? item.image : `${url}/images/${item.image}`; 
 
   const{cartItem,addtoCart,removetoCart}=useContext(StoreContext);
 
