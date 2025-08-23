@@ -108,11 +108,11 @@ const About = () => {
           <Row className='justify-content-center py-5 my-5'>
            {mockdata2.map((data2,idnx)=>{
             return(
-              <Col key={idnx} sm={12} md={5} className=" m-4 p-4 box_mainarea d-flex gap-4">
-                  <div >
-                    <img src={data2.image} alt={data2.title} className='rounded' style={{width:'10rem',height:'10rem'}}/>
+              <Col key={idnx} sm={12} md={5} className=" m-4 p-4 box_mainarea d-flex flex-wrap gap-4">
+                  <div className='col-sm-12 col-md-5'>
+                    <img src={data2.image} alt={data2.title} className='rounded' style={{width:'100%',height:'15rem'}}/>
                   </div>
-                  <div>
+                  <div className='col-sm-12 col-md-5'>
                     <h2>{data2.title}</h2>
                     <p>{data2.pagaraphs}</p>
                     <div className="d-flex justify-content-end">

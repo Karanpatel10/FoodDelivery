@@ -111,7 +111,7 @@ const Cart = ({setShowLogin}) => {
                         </Col>
                         
                        
-                        <Col sm={12} md={6} className='my-sm-5 my-md-0 d-flex justify-content-center'>
+                        <Col sm={12} md={6} className='py-5 py-md-0 d-flex justify-content-center'>
                             <div className='d-flex flex-column col-sm-12 col-md-6'>
                                  <p>If you have a promo code, Enter  here</p>
                                  <div className='d-flex'>
