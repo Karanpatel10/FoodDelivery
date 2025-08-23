@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, NavLink,Button} from 'react-bootstrap'
+import { Container, Row, Col, NavLink} from 'react-bootstrap'
 import about1_image from '../assets/image/assets/about/about_img1.avif'
 import image1 from '../assets/image/assets/about/community.jpg'
 import image2 from '../assets/image/assets/about/storepic.jpg'
@@ -116,7 +116,7 @@ const About = () => {
                     <h2>{data2.title}</h2>
                     <p>{data2.pagaraphs}</p>
                     <div className="d-flex justify-content-end">
-                    <NavLink to="/" className=' order_now btn_red  rounded p-3 fw-bold '><Button>{data2.text}</Button></NavLink>
+                    <NavLink to="/" className=' order_now btn_red  rounded p-3 fw-bold '>{data2.text}</NavLink>
                     </div>
                   </div>
                 
