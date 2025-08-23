@@ -37,7 +37,8 @@ const CardDesgin = ({item,showReview=true,showPrice=true}) => {
     else if (item.image.startsWith('static/')) {
       try {
         // Dynamically import static image
-        imageSrc = new URL(`../assets/image/frontend_assets/${item.image}`).default;
+        imageSrc = new URL(`../assets/image/frontend_assets/${item.image}`, import.meta.url).href;
+
       } catch (error) {
         console.warn('Static image not found:', item.image);
         imageSrc = '/default_food.png';
