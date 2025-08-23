@@ -23,11 +23,21 @@ const starRating=(rating)=>{
 }
 
 const CardDesgin = ({item,showReview=true,showPrice=true}) => {
-  const{url}=useContext(StoreContext);
-  const imageSrc = item.image.startsWith("/src") ? item.image : `${url}/images/${item.image}`; 
+  const{url,cartItem,addtoCart,removetoCart,food_list}=useContext(StoreContext);
+  
 
-  const{cartItem,addtoCart,removetoCart}=useContext(StoreContext);
+  // Find item info safely
+  const iteminfo = food_list.find(product => product._id === item._id);
 
+  if (!iteminfo) {
+    // Data not ready yet, show loader or nothing
+    return null; // or a skeleton/loading placeholder
+  }
+
+  const imageSrc = iteminfo.image.startsWith("/src")
+    ? iteminfo.image
+    : `${url}/images/${iteminfo.image}`;
+  
   return (
     <>    
               <Card key={item._id} className='custom_Card'>
