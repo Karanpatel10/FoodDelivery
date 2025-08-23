@@ -56,9 +56,9 @@ const StoreContextProvider = (props) => {
     const fetchFoodList=async()=>{
         try{
               const response=await axios.get(url+'/api/food/list');
-              // const backendList=response.data.data;
-              // const combinedList=[...staticFoodList,...backendList];
-              setFoodList(staticFoodList);
+              const backendList=response.data.data;
+              const combinedList=[...staticFoodList,...backendList];
+              setFoodList(combinedList);
 
         }catch(error){
             console.log('Error fetching food list from backend',error);
