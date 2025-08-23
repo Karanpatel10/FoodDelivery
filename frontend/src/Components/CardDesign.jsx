@@ -24,8 +24,16 @@ const starRating=(rating)=>{
 
 const CardDesgin = ({item,showReview=true,showPrice=true}) => {
   const{url,cartItem,addtoCart,removetoCart}=useContext(StoreContext);
-  const imageSrc = item?.image?.startsWith("/") ? item.image : `${url}/image/${item.image}`; 
-
+  let imageSrc = "/default_food.png"; // fallback
+  if (item?.image) {
+    if (item.image.startsWith("/src")) {
+      imageSrc = item.image; // frontend static image
+    } else if (item.image.startsWith("http")) {
+      imageSrc = item.image; // full URL from backend
+    } else {
+      imageSrc = `${url}/image/${item.image}`; // backend filename
+    }
+  }
   
   
   return (
