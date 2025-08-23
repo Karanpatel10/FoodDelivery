@@ -23,25 +23,11 @@ const starRating=(rating)=>{
 }
 
 const CardDesgin = ({item,showReview=true,showPrice=true}) => {
-  const{url,cartItem,addtoCart,removetoCart,food_list}=useContext(StoreContext);
-  
-  // Find item info safely
-  const iteminfo = food_list.find((product) => product._id === item._id);
+  const{url,cartItem,addtoCart,removetoCart}=useContext(StoreContext);
+  const imageSrc = item.image.startsWith("/src")
+  ? item.image
+  : `${url}/image/${item.image}`; // note: singular 'image', not 'images'
 
-  if (!iteminfo) {
-    return null; // data not ready yet
-  }
-
-  // Determine image source
-  const imageSrc = (() => {
-  if (!iteminfo.image) return 'default_food.png'; // fallback
-  if (typeof iteminfo.image === 'string') {
-    if (iteminfo.image.startsWith('/src')) return iteminfo.image; // static
-    if (iteminfo.image.startsWith('http')) return iteminfo.image; // full URL
-    return `${url}/images/${iteminfo.image}`; // backend filename
-  }
-  return iteminfo.image; // imported static module
-})();
 
   
   
