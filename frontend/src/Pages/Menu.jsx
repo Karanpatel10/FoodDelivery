@@ -9,13 +9,17 @@ const Menu = () => {
   const{category}=useParams()
   const {food_list} =useContext(StoreContext)
 
-  let menuItems=food_list
 
   // Filter menu
- if(category)
-  {
-    menuItems=food_list.filter(item=>item.category === category);
+  if (!food_list || food_list.length === 0) {
+    return (
+      <h3 className='py-5 d-flex justify-content-center'>Loading menu...</h3>
+    );
   }
+
+let menuItems = category 
+    ? food_list.filter(item => item.category === category) 
+    : food_list;
   
   return (
     <>
