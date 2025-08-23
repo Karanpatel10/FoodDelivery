@@ -33,7 +33,10 @@ const CardDesgin = ({item,showReview=true,showPrice=true}) => {
     <>    
               <Card key={item._id} className='custom_Card'>
                   <div className='card_wrapper'>
-                    <Card.Img className='card_img' variant="top" src={imageSrc} />
+                    <Card.Img className='card_img' variant="top" src={imageSrc} alt={item.name}
+          onError={(e) => {
+            e.target.src = "/default_food.png"; // fallback if image fails
+          }}/>
                     {
                       !cartItem[item._id]?<div className='card_add'><i className="bi bi-plus-circle-fill fs-5 text-white" onClick={() =>addtoCart(item._id)}/></div>:
                       <div className='card_incdec'>
