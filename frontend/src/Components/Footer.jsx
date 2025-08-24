@@ -31,23 +31,23 @@ const Footer = () => {
                   </div>
                 </div>
             </Col>
-            <Col>
+            <Col sm={6} lg={3}>
                 <div>
                   <h5>Order Now</h5>
-                    <div className='py-4'>
-                      <p>Call us or visit our store to place your order</p>
-                      <p style={{color:'var(--yellow)'}} className='fs-3 py-2'><Link to="tel:9999887777">999-888-7777</Link></p>
+                    <div className="py-3">
+                      <span>Call us or visit our store to place your order</span>
+                      <p style={{color:'var(--orange)'}} className='fs-3 pt-3 py-md-3'><a href="tel:9999887777">999-888-7777</a></p>
                     </div>
                 </div>
             </Col>
             <Col sm={6} lg={3}>
               <div>
                 <h5>Follow Us</h5>
-                  <div className='d-flex justify-content-center align-items-center gap-3 fs-2 py-4'>
-                    <p><a href="https://facebook.com" target="_blank" ><i class="bi bi-facebook"></i></a></p>
-                    <p><a href="https://instagram.com" target="_blank" ><i class="bi bi-instagram"></i></a></p>
-                    <p><a href="https://twitter.com" target="_blank" ><i class="bi bi-twitter"></i></a></p>
-                    <p><a href="https://youtube.com" target="_blank" ><i class="bi bi-youtube"></i></a></p>
+                  <div className='d-flex justify-content-center align-items-center gap-3 fs-3 py-4'>
+                    <a href="https://facebook.com" target="_blank" ><i className="bi bi-facebook facebook-icon"></i></a>
+                    <a href="https://instagram.com" target="_blank" ><i className="bi bi-instagram instagram-icon"></i></a>
+                    <a href="https://twitter.com" target="_blank" ><i className="bi bi-twitter twitter-icon"></i></a>
+                    <a href="https://youtube.com" target="_blank" ><i className="bi bi-youtube youtube-icon"></i></a>
                   </div>
               </div>
             </Col>
@@ -60,7 +60,7 @@ const Footer = () => {
               <Col>
                 <div >
                   <ul className='list-unstyled text-center'>
-                    <li>&copy;2023 <span style={{color:'var(--light-red)'}}>Code43</span> All Rights Reserved</li>
+                    <li>&copy;2023 <span style={{color:'var(--light-red)'}}>KP_Tech</span> All Rights Reserved</li>
                     <li>
                       <Link to='/about'>About Us</Link>
                     </li>

@@ -10,10 +10,6 @@ footer h5{
 footer p{
     line-height: 0.5rem;
 }
-footer hr{
-    /* border: 0.5px solid var(--black); */
-    /* width: 100%; */
-}
 footer ul li{
     display: inline-block;
     padding:0 0.5rem;
@@ -24,4 +20,17 @@ footer ul li::before{
 footer ul li:first-child::before{
     content: "";
 }
+footer a>i{
+    font-size: 1.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+footer a>i:hover{
+    transform: scale(1.5);
+}
 
+/* Original brand colors */
+footer .facebook-icon { color: #1877f2; }    /* Facebook blue */
+footer .instagram-icon { color: #E1306C; }   /* Instagram pink */
+footer .twitter-icon { color: #1DA1F2; }     /* Twitter blue */
+footer .youtube-icon { color: #FF0000; }     /* YouTube red */
