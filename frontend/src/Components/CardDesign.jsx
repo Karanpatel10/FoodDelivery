@@ -25,25 +25,7 @@ const starRating=(rating)=>{
 const CardDesgin = ({item,showReview=true,showPrice=true}) => {
   const{url,cartItem,addtoCart,removetoCart}=useContext(StoreContext);
   
-  let imageSrc = '/default_food.png'; // fallback
-
-  if (item?.image) {
-    if (item.image.startsWith('http') || item.image.startsWith('https')) {
-      // Full backend URL
-      imageSrc = item.image;
-    } else if (item.image.startsWith('/src')) {
-      // Frontend static asset
-      try {
-        imageSrc = new URL(`../assets/image/frontend_assets/${item.image.split('/').pop()}`, import.meta.url).href;
-      } catch (error) {
-        console.warn('Static image not found:', item.image);
-        imageSrc = '/default_food.png';
-      }
-    } else {
-      // Backend relative path
-      imageSrc = `${url}/image/${item.image}`;
-    }
-  }
+  <img src={item?.image?.startsWith('/')? item.image: `${url}/image/${item.image}`}/>
   
   return (
     <>    
