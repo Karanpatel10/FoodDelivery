@@ -7,6 +7,7 @@ import 'dotenv/config'
 import cartRouter from "./routes/CartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import contactusRouter from "./routes/ContactUsRouter.js";
+import promoRouter from "./routes/promoRoute.js";
 
 // app config
 const app = express();
@@ -26,6 +27,7 @@ app.use('/api/user',userRouter);
 app.use('/api/cart',cartRouter);
 app.use('/api/order',orderRouter);
 app.use('/api/contactus',contactusRouter);
+app.use('/api/promo',promoRouter);
 
 app.get("/", (req, res) => {
   res.send("API worked success");

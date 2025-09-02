@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import validator from "validator";
 import orderModel from "../models/OrderModels.js";
+import promoModel from "../models/promoModels.js";
 
 // login user 
 
@@ -118,8 +119,8 @@ const deleteprofile=async(req,res)=>{
         const userId=req.user.userId;
         await userModel.findByIdAndDelete(userId);
         await orderModel.deleteMany({userId:userId});
+        await promoModel.deleteMany({ userId:userId });
         res.json({success:true,message:'Delete profile'});
-
     }catch(error){
         console.log(error);
         res.json({success:false,message:'Error to delete profile'});
