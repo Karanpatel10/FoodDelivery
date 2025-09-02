@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router";
 
 const DiscountBanner = () => {
   const [show, setShow] = useState(false);
@@ -58,13 +59,14 @@ const DiscountBanner = () => {
               Get <b>10% OFF</b> your first order! <br />
               Use code: <strong>WELCOME10</strong>
             </Card.Text>
-            <Button
+            <Link to='/cart'><Button
               variant="success"
               size="sm"
               onClick={() => setAnimateOut(true)}
             >
               Shop Now
             </Button>
+            </Link>
           </Card.Body>
         </Card>
       </div>

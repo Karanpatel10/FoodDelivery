@@ -19,7 +19,7 @@ import { toast } from "react-toastify";
 
 const Header = ({ setShowLogin }) => {
   const [stickyscroll, setStickyscroll] = useState(false);
-  const { token, setToken,cartItem} = useContext(StoreContext);
+  const { token, setToken,cartItem,setPromo} = useContext(StoreContext);
   const [LPshow, setLPShow] = useState(false);
 
   
@@ -32,6 +32,7 @@ const Logout=()=>{
   localStorage.removeItem('discountSlideShown');
   toast.error("Logout Successfully");
   setToken("");
+  setPromo("");
   navigate("/");
 }
 

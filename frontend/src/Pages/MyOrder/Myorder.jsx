@@ -60,8 +60,8 @@ const Myorder = () => {
                         
                     {
                         data.length === 0? (
-                            <tr >
-                            <td colSpan="4" className='text-center  py-5 fs-2' style={{border:"none"}}>No order found</td>
+                            <tr>
+                            <td colSpan="5" className='text-center py-5 fs-2' style={{border:"none"}}>No order found</td>
                             </tr>
                         ):(
                             data.map((product,index)=>(

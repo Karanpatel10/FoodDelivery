@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const CartDelivery = () => {
     
-const {getTotalCartAmount,token,food_list,cartItem,url}=useContext(StoreContext)
+const {getTotalCartAmount,token,food_list,cartItem,url,promo}=useContext(StoreContext)
 
 const [data,setData]=useState({
 firstName:"",
@@ -30,7 +30,7 @@ const placeOrder=async(event)=>{
     event.preventDefault();
     let orderItems=[];
     food_list.map((item)=>{
-        if(cartItem[item._id]>0)
+        if((cartItem[item._id] || 0) >0)
         {
             let itemInfo=item;
             itemInfo["quantity"]=cartItem[item._id];
@@ -40,10 +40,13 @@ const placeOrder=async(event)=>{
     let orderData={
     address:data,
     items:orderItems,
-    amount:getTotalCartAmount()+2,
+    amount:parseFloat(getTotalCartAmount()+2-(promo?.type === "success" ? promo.discount : 0)).toFixed(2),
+    promo: promo?.type === "success" ? promo : null,
+    discount: promo?.type === "success" ? promo.discount : 0
     }
-
+    console.log(orderData);
     let response=await axios.post(url+"/api/order/place",orderData,{headers:{token}})
+    console.log(response);
     if(response.data.success)
     {
         const{session_url}=response.data;

@@ -8,6 +8,8 @@ const StoreContextProvider = (props) => {
 
     const [cartItem,setCartItem]=useState({});
     const [food_list,setFoodList]=useState([]);
+    const [promo,setPromo]=useState({value:"",text:"",type:"",discount:0});
+
     const url =import.meta.env.MODE === "development"
     ? import.meta.env.VITE_API_URL   // local backend
     : import.meta.env.VITE_API_KEY;  // deployed backend
@@ -66,6 +68,24 @@ const StoreContextProvider = (props) => {
         }
     }
 
+// store dicount data and apply promocode
+
+const applyPromoCode=async(code)=>{
+      try{
+        const response=await axios.post(url+'/api/promo/validate',{code},{headers:{token}});
+      
+        if(response.data.success)
+        {
+          setPromo({value:code,text:'Promo applied! You get discount',type:'success',discount:response.data.promo.discount});
+        }else{
+          setPromo({value:code,text:response.data.message,type:'false',discount:0});
+        }
+
+      }catch(error){
+        console.log('Error to apply code',error);
+      }
+}
+
 // load data from backend display on frontend cart
     const loadCartData=async(token)=>{
       const response=await axios.post(url+"/api/cart/get",{},{headers:{token}})
@@ -94,6 +114,8 @@ const StoreContextProvider = (props) => {
         url,
         token,
         setToken,
+        promo,setPromo,
+        applyPromoCode
   };
 
   return (
