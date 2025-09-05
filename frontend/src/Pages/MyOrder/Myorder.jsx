@@ -51,7 +51,7 @@ const Myorder = () => {
                         <tr className='text-center'>
                         <th className='d-none d-sm-table-cell'>Title</th>
                          <th>Product</th>
-                         <th>items</th>
+                         <th className='d-none d-sm-table-cell'>items</th>
                         <th>Amount</th>
                         <th>Status</th>
                         </tr>
@@ -69,7 +69,7 @@ const Myorder = () => {
                                     <td className='d-none d-sm-table-cell'><img src={assets.parcel_icon} alt='parcel_icon'/></td>
                 
                                             <td>{product.item.map((pro,idx)=>(<p key={idx}>{pro.name}&nbsp;x&nbsp;{pro.quantity}</p>))}</td>
-                                            <td>{product.item.reduce((total,pro)=>total+pro.quantity,0)}</td>
+                                            <td className='d-none d-sm-table-cell'>{product.item.reduce((total,pro)=>total+pro.quantity,0)}</td>
                                             
                                     <td><p>$&nbsp;{product.amount.toFixed(2)}</p></td>
                                     <td><p><Stepper  steps={steps} activeStep={getStepIndex(product.status)} activeColor="#198754" completeColor="#198754" defaultColor="#f59301"/></p></td>
