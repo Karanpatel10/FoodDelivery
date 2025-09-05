@@ -131,7 +131,7 @@ const NavlinkDrop=({cartItem=[]})=>{
                 {totalItems>0 && (<Badge pill bg="warning" style={{
               position: 'absolute',
               top: '-5px',
-              right: '-10px',
+              left: '16px',
               color: 'black',
             }}>{totalItems}</Badge>)}
                 </NavLink>

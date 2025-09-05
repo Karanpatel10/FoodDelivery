@@ -49,7 +49,7 @@ const Myorder = () => {
                 <table className='table border align-middle'>
                     <thead>
                         <tr className='text-center'>
-                        <th>Title</th>
+                        <th className='d-none d-sm-table-cell'>Title</th>
                          <th>Product</th>
                          <th>items</th>
                         <th>Amount</th>
@@ -66,7 +66,7 @@ const Myorder = () => {
                         ):(
                             data.map((product,index)=>(
                                 <tr key={index} className='text-center'>
-                                    <td><img src={assets.parcel_icon} alt='parcel_icon'/></td>
+                                    <td className='d-none d-sm-table-cell'><img src={assets.parcel_icon} alt='parcel_icon'/></td>
                 
                                             <td>{product.item.map((pro,idx)=>(<p key={idx}>{pro.name}&nbsp;x&nbsp;{pro.quantity}</p>))}</td>
                                             <td>{product.item.reduce((total,pro)=>total+pro.quantity,0)}</td>
