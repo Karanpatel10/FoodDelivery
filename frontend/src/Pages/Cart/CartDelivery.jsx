@@ -77,7 +77,7 @@ console.log("update data",data);
         <section>
             <Container fluid className='p-0 p-md-5 m-0 m-md-5'>
                 <Row className='p-5 d-flex justify-content-between'>
-                    <Col sm={12} md={5} className='p-5'>
+                    <Col sm={12} md={5} className='py-5'>
                         <form  onSubmit={placeOrder}>
                            <div className='d-flex flex-column gap-4'>
                                 <h2>Delivery Information</h2>
