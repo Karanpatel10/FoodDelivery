@@ -1,12 +1,22 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState,useEffect} from 'react'
 import { Container, Row,Col } from 'react-bootstrap'
 import { CartSummary } from './Cart'
 import { StoreContext } from '../Context/StoreContext'
 import axios from 'axios'
+import {Country,State,City} from 'country-state-city'
 
 const CartDelivery = () => {
     
 const {getTotalCartAmount,token,food_list,cartItem,url,promo}=useContext(StoreContext)
+
+const[country,setCountry]=useState("");
+const[state,setState]=useState("");
+const[city,setCity]=useState("");
+
+const countries=Country.getAllCountries();
+const states=country?State.getStatesOfCountry(country):[];
+const cities=state?City.getCitiesOfState(country,state):[];
+
 
 const [data,setData]=useState({
 firstName:"",
@@ -44,9 +54,9 @@ const placeOrder=async(event)=>{
     promo: promo?.type === "success" ? promo : null,
     discount: promo?.type === "success" ? promo.discount : 0
     }
-    console.log(orderData);
+   
     let response=await axios.post(url+"/api/order/place",orderData,{headers:{token}})
-    console.log(response);
+   
     if(response.data.success)
     {
         const{session_url}=response.data;
@@ -56,6 +66,9 @@ const placeOrder=async(event)=>{
     }
 }
 
+useEffect(()=>{
+console.log("update data",data);
+},[data])
 
 
 
@@ -75,12 +88,41 @@ const placeOrder=async(event)=>{
                                 <input type='email' name='email' onChange={onChangehandler} value={data.email} placeholder='Email address' className='form-control' required/>
                                 <input type='text' name='street' onChange={onChangehandler} value={data.street} placeholder='Street' className='form-control' required/>
                                 <div className='col-md-12 d-flex gap-3'>
-                                    <input type='text' name='city' onChange={onChangehandler} value={data.city} placeholder='City' className='form-control' required/>
-                                    <input type='text' name='state' onChange={onChangehandler} value={data.state} placeholder='State' className='form-control' required/>
+                                     
+                                      <select className='form-control' value={country} onChange={(e)=>{const selectedCountry = countries.find(c => c.isoCode === e.target.value);setCountry(e.target.value);setData({...data,country:selectedCountry?.name||""})}} required>
+                                        <option value="">--- select Country ---</option>
+                                        {countries.map((c)=>(
+                                            <option key={c.isoCode} value={c.isoCode}>
+                                                {c.name}
+                                            </option>
+                                        ))}  
+                                        </select>
+
+                                        <select className='form-control' value={state} onChange={(e)=>{const selectedState = states.find(s => s.isoCode === e.target.value);setState(e.target.value);setData({...data,state:selectedState?.name||""})}} required>
+                                        <option value="">--- select state ---</option>
+                                        {states.map((s)=>(
+                                            <option key={s.isoCode} value={s.isoCode}>
+                                                {s.name}
+                                            </option>
+                                        ))}  
+                                        </select>
+
+                                    
                                 </div>
                                 <div className='col-md-12 d-flex gap-3'>
+                                   
+                                    <select className='form-control' value={city} onChange={(e)=>{setCity(e.target.value);setData({...data,city:e.target.value})}} required>
+                                        <option value="">--- select city ---</option>
+                                        {
+                                            cities.map((ct)=>(
+                                                <option key={ct.name} value={ct.name}>
+                                                    {ct.name}
+                                                </option>
+                                            ))
+                                        }
+                                    </select>
                                     <input type='text' name='zipcode' onChange={onChangehandler} value={data.zipcode} placeholder='Zip Code' className='form-control' required/>
-                                    <input type='text' name='country' onChange={onChangehandler} value={data.country} placeholder='Country' className='form-control' required/>
+
                                 </div>
                                 <input type='tel' name='phone' onChange={onChangehandler} value={data.phone} placeholder='Phone' className='form-control' required/>
                             </div>

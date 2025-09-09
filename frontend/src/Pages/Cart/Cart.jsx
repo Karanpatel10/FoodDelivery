@@ -8,6 +8,8 @@ import {toast} from 'react-toastify'
 
 
 
+
+
 const CartSummary=()=>{
 
     const {getTotalCartAmount,promo}=useContext(StoreContext);
@@ -49,7 +51,8 @@ const CartSummary=()=>{
 
 
 const Cart = ({setShowLogin}) => {
-
+    
+   
     const{cartItem,food_list,removetoCart,url,token,getTotalCartAmount,promo,setPromo,applyPromoCode}=useContext(StoreContext);
     const filteredCartItems=food_list.filter(item=>(cartItem[item._id] || 0) >0); 
 
@@ -108,9 +111,9 @@ const Cart = ({setShowLogin}) => {
                                         <Row className='text-center'>
                                             <Col><img src={item?.image?.startsWith('/')? item.image: `${url}/image/${item.image}`}  style={{ width: '5rem', height: '5rem', objectFit: 'cover' }}/></Col>
                                             <Col>{item.name}</Col>
-                                            <Col>&#8377;{item.price.toFixed(2)}</Col>
+                                            <Col>${item.price.toFixed(2)}</Col>
                                             <Col>{cartItem[item._id] || 0}</Col>
-                                            <Col>&#8377;{(item.price*(cartItem[item._id]|| 0)).toFixed(2)}</Col>
+                                            <Col>${(item.price*(cartItem[item._id]|| 0)).toFixed(2)}</Col>
                                             <Col><i className="bi bi-x text-danger" onClick={()=>removetoCart(item._id)} role='button'></i></Col>
                                         </Row>
                                         </div>

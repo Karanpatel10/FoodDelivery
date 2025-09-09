@@ -56,8 +56,8 @@ const DiscountBanner = () => {
           <Card.Body className="text-center">
             <Card.Title>🎉 Special Offer</Card.Title>
             <Card.Text>
-              Get <b>10% OFF</b> your first order! <br />
-              Use code: <strong>WELCOME10</strong>
+              Get <b>$5 OFF</b> your first order! <br />
+              Use code: <strong>WELCOME5</strong>
             </Card.Text>
             <Link to='/cart'><Button
               variant="success"
