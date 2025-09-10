@@ -24,8 +24,7 @@ const countorder=async(req,res)=>{
 
 
 const placeOrder = async (req, res) => {
-  const frontend_url =
-    process.env.VITE_API_URL || process.env.FRONTEND_URL || "http://localhost:5173";
+  const frontend_url =process.env.WWWW_DOMAIN||process.env.VITE_API_URL || process.env.FRONTEND_URL || "http://localhost:5173";
     const promoemail= await userModel.findById(req.user.userId);
 
   try {
