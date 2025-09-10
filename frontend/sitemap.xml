@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.tastypoint.shop/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/menu</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/about</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/contact_us</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/cart</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/cart/delivery</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/privacy_policy</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/terms_of_use</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/verify</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/myorder</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.tastypoint.shop/profile</loc>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>
