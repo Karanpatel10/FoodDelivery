@@ -27,9 +27,14 @@ const Header = ({ setShowLogin }) => {
   const userName=localStorage.getItem("username");
  
 const Logout=()=>{
-  localStorage.removeItem('token');
-  localStorage.removeItem('username');
-  localStorage.removeItem('discountSlideShown');
+
+  localStorage.clear();
+  sessionStorage.clear();
+
+  // localStorage.removeItem('token');
+  // localStorage.removeItem('username');
+  // localStorage.removeItem('discountSlideShown');
+  
   toast.error("Logout Successfully");
   setToken("");
   setPromo("");
