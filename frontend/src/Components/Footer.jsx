@@ -15,9 +15,9 @@ const Footer = () => {
               <div>
                 <h5>Location</h5>
                 <div className='py-4'>
-                  <p>2054 SG Road</p>
-                  <p> CHIKHLI NAV GJ 33126</p>
-                  <p>INDIA</p>
+                  <p>645 W Market Road</p>
+                  <p>Greensboro NC 27856</p>
+                  <p>USA</p>
                 </div>
               </div>
             </Col>
