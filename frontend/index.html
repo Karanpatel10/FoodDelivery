@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
     <link rel="manifest" href="/site.webmanifest"/>
@@ -25,10 +27,20 @@
         <meta property="og:description" content="Order tasty food online from Tastypoint. Fresh meals, fast delivery, and great offers." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.tastypoint.shop/" />
+
+        <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://www.tastypoint.shop",
+        "logo": "https://www.tastypoint.shop/favicon-192x192.png"
+      }
+    </script>
         
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.jsx">
+    </script>
   </body>
 </html>
